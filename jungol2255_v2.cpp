@@ -2,7 +2,7 @@
 Problem: jungol2255
 User: emsw2013
 Language: C++
-Result: Time Limit Exceed(93)
+Result: Success(100)
 Time:10 ms
 Memory:1 MB
 ****************************************************************/
@@ -26,12 +26,12 @@ long lcm(long a, long b)
 int main()
 {
 	// 1. get input
-	int N;										// Ä«µå °³¼ö (1~20,000)
-	vector<int> progression;			// ¼ö¿­ 
-	vector<bool> visit;					// true: Å½»öÇÑ ±ËÀû (Å½»öÇÑ ±ËÀû Áßº¹¿¬»ê ¹æÁö)
-	map<int, bool> tracePairs;		// key: Ä«µå º° ±ËÀû (°°Àº ±ËÀû lcm Áßº¹¿¬»ê ¹æÁö)
-	int lcmTrace = 1;						// ¼ö¿­ÀÇ ÃÖÁ¾ ±ËÀû = return 
-	int count = 0;							// Ä«¿îÆÃ ÇÒ ¶§ »ç¿ë (1 ~ 2,000,000,000)
+	int N;										// ì¹´ë“œ ê°œìˆ˜ (1~20,000)
+	vector<int> progression;			// ìˆ˜ì—´ 
+	vector<bool> visit;					// true: íƒìƒ‰í•œ ê¶¤ì  (íƒìƒ‰í•œ ê¶¤ì  ì¤‘ë³µì—°ì‚° ë°©ì§€)
+	map<int, bool> tracePairs;		// key: ì¹´ë“œ ë³„ ê¶¤ì  (ê°™ì€ ê¶¤ì  lcm ì¤‘ë³µì—°ì‚° ë°©ì§€)
+	int lcmTrace = 1;						// ìˆ˜ì—´ì˜ ìµœì¢… ê¶¤ì  = return 
+	int count = 0;							// ì¹´ìš´íŒ… í•  ë•Œ ì‚¬ìš© (1 ~ 2,000,000,000)
 
 	cin >> N;
 	visit.reserve(N);
@@ -49,7 +49,7 @@ int main()
 	}
 
 	// 2. search
-	if (count == N) // Ä«µå À§Ä¡¿Í ¼ö¿­ÀÌ ¸ğµÎ ÀÏÄ¡ÇÑ ÀÔ·Â °Å¸£±â
+	if (count == N) // ì¹´ë“œ ìœ„ì¹˜ì™€ ìˆ˜ì—´ì´ ëª¨ë‘ ì¼ì¹˜í•œ ì…ë ¥ ê±°ë¥´ê¸°
 	{
 		cout << 0;
 		return 0;
@@ -62,7 +62,7 @@ int main()
 			int idx = i;
 			count = 0;
 
-			if (progression[i] != i)  // Ä«µå ¹øÈ£¿Í ¼ö¿­ÀÌ ÀÏÄ¡ÇÑ °æ¿ì ±ËÀûÀÌ 0ÀÌ¹Ç·Î °Å¸§
+			if (progression[i] != i)  // ì¹´ë“œ ë²ˆí˜¸ì™€ ìˆ˜ì—´ì´ ì¼ì¹˜í•œ ê²½ìš° ê¶¤ì ì´ 0ì´ë¯€ë¡œ ê±°ë¦„
 			{
 				do
 				{
